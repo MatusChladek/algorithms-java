@@ -16,10 +16,23 @@ public class DFS {
         for (Vertex v : vertexList) {
             if (!v.isVisited()) {
                 v.setVisited(true);
-                dfsWithStack(v);
+//                dfsWithStack(v);
+                dfsRecursion(v);
 
             }
         }
+    }
+
+    private void dfsRecursion(Vertex v) {
+        System.out.println(v + "");
+
+        for (Vertex vertex : v.getNeighbourList()) {
+            if (!vertex.isVisited()) {
+                vertex.setVisited(true);
+                dfsRecursion(vertex);
+            }
+        }
+
     }
 
     private void dfsWithStack(Vertex rootVertex) {
