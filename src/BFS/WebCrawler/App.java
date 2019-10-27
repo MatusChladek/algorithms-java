@@ -1,4 +1,4 @@
-package WebCrawler;
+package BFS.WebCrawler;
 
 public class App {
     public static void main(String[] args){

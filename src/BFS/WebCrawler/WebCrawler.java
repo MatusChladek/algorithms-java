@@ -1,4 +1,4 @@
-package WebCrawler;
+package BFS.WebCrawler;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
