@@ -16,7 +16,7 @@ public class BellmanFord {
 
         sourceVertex.setMinDistance(0);
 
-        for (Vertex vertex : vertexList) {
+        for (int i = 0; i < vertexList.size() - 1; i++) { // V-1 iterations
             for (Edge edge : edgeList) {
 
                 /*
@@ -27,7 +27,7 @@ public class BellmanFord {
                  *      		~ a Dijkstra akar linearois time cmplecxitivel is tudna futni
                  */
 
-                if ( edge.getStartVertex().getMinDistance() == Integer.MAX_VALUE ) {
+                if (edge.getStartVertex().getMinDistance() == Integer.MAX_VALUE) {
                     continue;
                 }
 
@@ -40,9 +40,9 @@ public class BellmanFord {
             }
         }
 
-        for (Edge edge : edgeList) {
+        for (Edge edge : edgeList) { // Vth iteration
             if (edge.getStartVertex().getMinDistance() != Integer.MAX_VALUE) {
-                if ( hasCycle(edge) ) {
+                if (hasCycle(edge)) {
                     System.out.println("Negative edge weight cycles detected!");
                     return;
                 }
@@ -53,16 +53,16 @@ public class BellmanFord {
             System.out.println("There is a shortest path from sourco to target, with cost: " + targetVertex.getMinDistance());
 
             Vertex actualVErtex = targetVertex;
-            while( actualVErtex.getPreviousVertex() != null ){
-                System.out.print(actualVErtex+"-");
-                actualVErtex=actualVErtex.getPreviousVertex();
+            while (actualVErtex.getPreviousVertex() != null) {
+                System.out.print(actualVErtex + "-");
+                actualVErtex = actualVErtex.getPreviousVertex();
             }
         } else {
             System.out.println("There is no path from source to target...");
         }
     }
 
-    private boolean hasCycle(Edge edge){
+    private boolean hasCycle(Edge edge) {
         return edge.getTargetVertex().getMinDistance() > edge.getStartVertex().getMinDistance() + edge.getWeight();
     }
 }
