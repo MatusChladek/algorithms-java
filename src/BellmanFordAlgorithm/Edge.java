@@ -1,21 +1,22 @@
-package BellmanFord;
+package BellmanFordAlgorithm;
 
 public class Edge {
-    private double weight;
+
+    private int weight;
     private Vertex startVertex;
     private Vertex targetVertex;
 
-    Edge(double weight, Vertex startVertex, Vertex targetVertex){
+    public Edge(Vertex startVertex, Vertex targetVertex, int weight) {
         this.weight = weight;
         this.startVertex = startVertex;
         this.targetVertex = targetVertex;
     }
 
-    public double getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
