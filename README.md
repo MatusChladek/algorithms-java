@@ -6,6 +6,3 @@
 * **Bellman Ford algorithm** - searching for shortest path algorithm on DG
 * **Lazy Prim algorithm** - build spanning tree from a given vertex, adding smallest edge to MST
 * **Travelling Salesman Problem** - solved by Simulated Annealing
-
-
->Test cases to be implemented
