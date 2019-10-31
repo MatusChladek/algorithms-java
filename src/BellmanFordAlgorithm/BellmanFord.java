@@ -19,14 +19,6 @@ public class BellmanFord {
         for (int i = 0; i < vertexList.size() - 1; i++) { // V-1 iterations
             for (Edge edge : edgeList) {
 
-                /*
-                 * ez adja a O(V*E) complexityt mindig, nem lesz olyan mint Djokstra algoritmusnal ahol a priority queue
-                 * 	pontos implekemntalasatol fugg a futasi ido
-                 * 		Itt lehet hasznalni listat vagy arrayt teljesen mindegx !!!
-                 *      DE ... lehet hogy O(E) = V*V es igy egy V*V*V algoritmust kapunk ... tehat lassabb a Dijkstra algoritmusnal mindig
-                 *      		~ a Dijkstra akar linearois time cmplecxitivel is tudna futni
-                 */
-
                 if (edge.getStartVertex().getMinDistance() == Integer.MAX_VALUE) {
                     continue;
                 }
